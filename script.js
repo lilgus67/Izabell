@@ -1,11 +1,5 @@
-// Seleciona todos os blocos de conteúdo
 const blocks = document.querySelectorAll('.reveal');
-
-// Configurações do observador
-const observerOptions = {
-    threshold: 0.2 // Ativa quando 20% do item estiver visível
-};
-
+const observerOptions = { threshold: 0.2 };
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -13,9 +7,6 @@ const observer = new IntersectionObserver((entries) => {
         }
     });
 }, observerOptions);
-
-// Começa a observar cada bloco
 blocks.forEach(block => {
     observer.observe(block);
 });
-
